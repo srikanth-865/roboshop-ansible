@@ -4,4 +4,4 @@
   - name: copying the mongo repo
     copy: 
      src: mongo.repo
-     dest: vim /etc/yum.repos.d/mongo.repo
+     dest: /etc/yum.repos.d/mongo.repo
