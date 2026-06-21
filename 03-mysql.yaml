@@ -1,0 +1,15 @@
+- name: installing mysql server
+  hosts: mysql
+  become: yes
+  tasks:
+  - name: installing mysql server
+    package:
+      name: mysql-server
+      state: present
+  - name: start and enable service
+    service:
+      name: mysql
+      state: started
+      enabled: yes
+  - name: setup root password
+    command: mysql_secure_installation --set-root-pass RoboShop@1
