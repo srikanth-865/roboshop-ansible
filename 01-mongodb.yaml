@@ -1,8 +1,8 @@
--name: configuring mongodb server
- hosts: mongodb
- become: yes
- tasks:
- - name: copying the mongo repo
-   copy: 
-    src: mongo.repo
-    dest: vim /etc/yum.repos.d/mongo.repo
+- name: configuring mongodb server
+  hosts: mongodb
+  become: yes
+  tasks:
+  - name: copying the mongo repo
+    copy: 
+     src: mongo.repo
+     dest: vim /etc/yum.repos.d/mongo.repo
