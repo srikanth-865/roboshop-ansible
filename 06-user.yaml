@@ -42,10 +42,10 @@
       path: /app
   - name: copy user service
     template: 
-    src: user.service.j2
-    dest: /etc/systemd/system/user.service
-  -  name: deamon reload
-     systemd_service:
+     src: user.service.j2
+     dest: /etc/systemd/system/user.service
+  - name: deamon reload
+    systemd_service:
       name: user
       daemon_reload: true
   - name: enable and restart user
