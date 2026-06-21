@@ -1,6 +1,5 @@
 - name: roboshop instances management
   hosts: local
-  become: yes
   connection: local
   vars:
     instances: ["mongodb", "redis", "mysql", "rabbitmq"] # "catalogue", "user", "cart", "shipping", "payment", "frontend"]
