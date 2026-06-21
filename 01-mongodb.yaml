@@ -3,7 +3,10 @@
   become: yes
   tasks:
   - name: copying the mongo repo
-    become: yes
     copy: 
      src: mongo.repo
      dest: /etc/yum.repos.d/mongo.repo
+  - name: installing mongodb server
+    package:
+     name: mongodb-org
+     state: present
