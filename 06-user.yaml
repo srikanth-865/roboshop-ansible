@@ -1,5 +1,6 @@
 - name: installing user server
   hosts: user
+  become: yes
   tasks: 
   - name: enabling nodejs 20
     command: dnf module enable nodejs:20 -y
