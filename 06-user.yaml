@@ -33,7 +33,7 @@
      dest: /tmp/user.zip
 
   - name: unzip for catalogue user
-    unarchieve:
+    unarchive:
      src: /tmp/user.zip
      dest: /app
      remote_src: yes
