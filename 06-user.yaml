@@ -23,10 +23,11 @@
     file:
      path: /tmp/user.zip
      state: absent
+
   - name: create directory
     file:
      path: /app
-     state: present
+     state: directory
 
   - name: downloading app code
     get_url:
