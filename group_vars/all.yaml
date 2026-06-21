@@ -3,3 +3,10 @@ ansible_password: DevOps321
 MONGODB_HOST: mongodb.srikanth865.online
 REDIS_HOST: redis.srikanth865.online
 CATALOGUE_HOST: catalogue.srikanth865.online
+MYSQL_HOST: mysql.daws90s.shop 
+RABBITMQ_HOST: rabbitmq.daws90s.shop 
+CATALOGUE_HOST: catalogue.daws90s.shop
+USER_HOST: user.daws90s.shop
+CART_HOST: cart.daws90s.shop
+SHIPPING_HOST: shipping.daws90s.shop
+PAYMENT_HOST: payment.daws90s.shop
