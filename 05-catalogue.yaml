@@ -41,7 +41,7 @@
       path: /app
   - name: copy catalogue service
     template:
-      src: catalogue.service.j2
+      src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
   - name: copy mongodb repo
     copy:
