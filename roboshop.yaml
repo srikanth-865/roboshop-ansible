@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   vars:
-    instances: ["user", "cart", "shipping", "payment", "frontend", mongodb", "redis", "mysql", "rabbitmq","catalogue"]
+    instances: ["user", "cart", "shipping", "payment", "frontend", "mongodb", "redis", "mysql", "rabbitmq","catalogue"]
     image_id: ami-0220d79f3f480ecf5
-    domain_name: srikanth865.online # replace with your domain
+    domain_name: srikanth865.online 
     action: create
   tasks:
   - name: create ec2 instances
@@ -18,7 +18,7 @@
       - roboshop-common
     loop: "{{ instances }}"
     register: ec2_output
-    when: action == "create"
+    when: action == "create"   # By default it will take create action if we give delete only then its take delete
 
   # - name: print output
   #   debug:
@@ -33,12 +33,12 @@
     amazon.aws.route53:
       state: present
       zone: "{{ domain_name }}"
-      record: "{{ item.item }}.{{ domain_name }}" #mongodb.daws90s.shop
+      record: "{{ item.item }}.{{ domain_name }}" #mongodb.daws90s.shop  we refer in ec2_output results
       type: A
       ttl: 1
       value: "{{ item.instances[0].private_ip_address }}"
       overwrite: true
-    loop: "{{ ec2_output.results }}"
+    loop: "{{ ec2_output.results }}"   # we take help of register output ec2 instances and then we refer
     when: action == "create"
     
   - name: create r53 record for frontend
